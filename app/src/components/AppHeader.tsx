@@ -6,11 +6,7 @@ import AppContainer from "./AppContainer"
 
 export const Brand = () => {
     return (
-        <Stack
-            sx={{
-                cursor: "pointer",
-            }}
-        >
+        <Stack sx={{ cursor: "pointer" }}>
             <img src="/logo-joke.png" alt="brand" style={{ maxWidth: 70 }} />
         </Stack>
     )
@@ -38,8 +34,9 @@ export const Account = () => {
         <Stack
             direction="row"
             alignItems="center"
-            justifyContent={"center"}
+            justifyContent="center"
             gap={2}
+            style={{ cursor: "pointer" }}
         >
             {user && (
                 <Stack justifyContent="center" alignItems="flex-end">
