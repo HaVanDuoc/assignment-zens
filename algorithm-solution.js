@@ -1,48 +1,103 @@
-/* 
+// Function handle Sort Array
+const sortArray = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
 
-Mini-Max Sum
+  return arr;
+};
 
-Given five positive integers, find the minimum and maximum values that can be calculated by summing
-exactly four of the five integers. Then print the respective minimum and maximum values as a single line
-of two space-separated long integers.
-For example arr = [1, 3, 5, 7, 9], . Our minimum sum is 1 + 3 + 5 + 7 = 16 and our maximum sum is 3 + 5 + 7 + 9 = 24
+// Function handle sum array
+const sumArray = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
 
-We would print
-16 24
+  return sum;
+};
 
-// Function Description
-Complete the miniMaxSum function in the editor below. It should print two space-separated integers on
-one line: the minimum sum and the maximum sum of 4 of 5 elements.
+// Function find min in array
+const findMin = (arr) => {
+  if (arr.length === 0) {
+    return "Empty Array";
+  }
 
-miniMaxSum has the following parameter(s): arr: an array of 5 intergers
+  let min = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+};
 
-Input format
-A single line of five space-separated intergrs
+// Function find max in array
+const findMax = (arr) => {
+  if (arr.length === 0) {
+    return "Empty Array";
+  }
 
-Output format
-Print two space-separated long integers denoting the respective minimum and maximum values that can
-be calculated by summing exactly four of the five integers. (The output can be greater than a 32 bit
-integer.)
-Simple input
-1 2 3 4 5
-Simple output 
-10 14
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+};
 
+// Function find even elements in array
+const findEvenElement = (arr) => {
+  let even = [];
 
-Our initial numbers are 1, 2, 3, 4 and 5. We can calculate the following sums using four of the five
-integers:
-1: If we sum everything except 1, our sum is: 2 + 3 + 4 + 5 = 14
-2: If we sum everything except 2, our sum is: 1 + 3 + 4 + 5 = 13
-3: If we sum everything except 3, our sum is: 1 + 2 + 4 + 5 = 12
-4: If we sum everything except 4, our sum is: 1 + 2 + 3 + 5 = 11
-5: If we sum everything except 5, our sum is: 1 + 2 + 3 + 4 = 10
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      even.push(arr[i]);
+    }
+  }
 
-*/
+  return even;
+};
 
-// Solution
-const miniMaxSum = (arr) => {};
+// Function find odd elements in array
+const findOddElement = (arr) => {
+  let odd = [];
 
-const input = "1 2 3 4 5";
-const arr = input.split(" ").map(Number);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      odd.push(arr[i]);
+    }
+  }
 
-console.log("arr", arr);
+  return odd;
+};
+
+const miniMaxSum = (arr) => {
+  const sum = sumArray(arr);
+  const minElement = findMin(arr);
+  const maxElement = findMax(arr);
+  const minSum = sum - maxElement;
+  const maxSum = sum - minElement;
+
+  // Cách 2
+  //   const sort = sortArray(arr);
+  //   const sum = sumArray(arr);
+  //   const minSum = sum - arr[arr.length - 1];
+  //   const maxSum = sum - arr[0];
+
+  console.log(minSum + " " + maxSum);
+};
+
+const input = "2 1 4 3 5";
+const arr = input.split(" ").map(Number); // chuyển thành mảng số nguyên
+miniMaxSum(arr);
+
+// console.log("Even array", findEvenElement(arr));
+// console.log("Odd array", findOddElement(arr));
