@@ -83,11 +83,14 @@ const HomePage = () => {
                             }}
                         >
                             <Stack
-                                boxShadow="0 0 10px 1px rgba(0,0,0,0.2)"
+                                boxShadow={{
+                                    xs: "none",
+                                    sm: "0 0 10px 1px rgba(0,0,0,0.2)",
+                                }}
                                 borderRadius={10}
-                                padding="80px 7vw"
+                                padding="5vw 7vw"
                             >
-                                <Typography fontSize={18}>
+                                <Typography fontSize={{ sm: 18, xs: 16 }}>
                                     That's all the jokes for today! Come back
                                     another day!
                                 </Typography>

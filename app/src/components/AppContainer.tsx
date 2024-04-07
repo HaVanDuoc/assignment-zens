@@ -7,7 +7,7 @@ interface IContainer extends ContainerProps {
 
 const AppContainer: React.FC<IContainer> = ({ children, ...props }) => {
     return (
-        <Container {...props} sx={{ maxWidth: `1000px` }}>
+        <Container {...props} sx={{ maxWidth: `1000px !important` }}>
             {children}
         </Container>
     )

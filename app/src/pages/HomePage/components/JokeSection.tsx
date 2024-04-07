@@ -53,7 +53,9 @@ const JokeSection: React.FC<IJoke & { refetch: boolean; setRefetch: any }> = ({
             <Stack gap={5}>
                 {/* Content */}
                 <Stack>
-                    <Typography>{content}</Typography>
+                    <Typography textAlign={{ md: "left", xs: "justify" }}>
+                        {content}
+                    </Typography>
                 </Stack>
 
                 <Stack paddingLeft="10vw" paddingRight="10vw">
@@ -62,7 +64,7 @@ const JokeSection: React.FC<IJoke & { refetch: boolean; setRefetch: any }> = ({
 
                 {/* Like or dislike */}
                 <Stack
-                    direction="row"
+                    direction={{ xs: "column", sm: "row" }}
                     alignItems="center"
                     justifyContent="center"
                     gap={5}

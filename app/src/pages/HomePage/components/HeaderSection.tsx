@@ -12,7 +12,7 @@ const HeaderSection = () => {
                 A joke a day keeps the doctor away
             </Typography>
             <Typography fontSize={13}>
-                if you joke wrong way, your teeth have to pay. (Serious)
+                If you joke wrong way, your teeth have to pay. (Serious)
             </Typography>
         </Stack>
     )
